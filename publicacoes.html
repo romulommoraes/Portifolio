@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Populacional :)</title>
+    <meta name="Simulador Populacional para ensino de genética mendeliana" content="">
+    <meta name="Rômulo Maciel de Moraes Filho" content="">
+    <script src="p5.min.js"></script>
+    <!-- Mobile Specific Metas
+
+    <!--External Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Internal Styles -->
+    <style>
+        @media (max-width: 62em) {
+            .navbar-nav {
+                padding-top: .425rem;
+                padding-left: 0.75rem;
+            }
+
+            .navbar-nav .nav-item {
+                float: none;
+            }
+
+            .navbar-brand {
+                float: right;
+            }
+
+            .navbar-brand,
+            .navbar-nav .nav-item {
+                display: block;
+            }
+
+            .navbar-nav .nav-item+.nav-item {
+                margin-left: 0;
+            }
+
+            .dropdown-menu {
+                position: relative;
+                float: none;
+            }
+        }
+
+        .footer {
+            background-color: rgb(0, 0, 0);
+            color: #fafaff;
+            text-align: left;
+
+        }
+
+        #profile_picture {
+            border: 2px solid rgb(0, 0, 0);
+            width: 95%;
+            margin-top: 90px;
+            margin-left: 0px;
+        }
+
+        #textz {
+            margin-top: 56px;
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .myself {
+            margin-top: 25px;
+            font-size: 13px;
+            text-align: justify;
+
+        }
+
+        #msg {
+            margin-top: 25px;
+            font-size: 9px;
+            margin-bottom: 25px;
+            text-align: left;
+
+        }
+
+        #entrada {
+            margin-top: 55px;
+            font-size: 15px;
+        }
+
+    </style>
+    <!-- External Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Internal Scripts -->
+    <script type="text/javascript" src="">
+    </script>
+
+
+</head>
+
+<body>
+
+   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <!-- <li class="nav-item active">
+                     <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.researchgate.net/profile/Romulo_Moraes_Filho">Research Gate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/r%C3%B4mulo-moraes-666617132">Linkedin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://lattes.cnpq.br/3450847631355213">Currículo Lattes</a>
+                </li>
+                <!-- Dropdown - Delete from this comment to the next if you don't want it -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produções</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://romulomoraesads.000webhostapp.com/naturalsimulations/Simulador_Populacional.html">Simulações Naturais</a>
+                        <a class="dropdown-item" href="#">Artigos Científicos</a>
+                        <a class="dropdown-item" href="http://dgp.cnpq.br/dgp/espelhorh/3450847631355213">Grupos de Pesquisa</a>
+                        <a class="dropdown-item" href="https://orcid.org/0000-0003-3988-4379">ORCID</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://github.com/romulommoraes">Github</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+        <h2 style="text-align: center; margin-bottom: 25px;">Publicações Acadêmicas</h2>
+        <ol style="margin-bottom: 55px; margin-left: 5px;">
+            <li><a class="nav-link" href="http://dx.doi.org/10.1590/1678-992x-2018-0252">Diagnostic fingerprints ISSR/SSR for tropical leguminous species Stylosanthes capitata and Stylosanthes macrocephala </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.1590/1678-4324-2019180120">In Silico Characterization of Meloidogyne Genus Nematode Cellulose Binding Proteins </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/gmr18187">In silico characterization and phylogenetic analysis of a mannose-specific lectin in Allium species </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.9734/jeai/2019/v39i230329">Resistance of Malpighia emarginata DC. Genotypes to Meloidogyne enterolobii Parasitism </a></li>
+            
+            <li><a class="nav-link" href="https://austinpublishinggroup.com/agriculture-crop-sciences/download.php?file=fulltext/aacs-v4-id1049.pdf">To Burn or Not to Burn. The Potential of Use and Production of Biofuels in Brazil </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.29328/journal.jpsp.1001015">Reaction of Psidium guineense and Psidium guajava genotypes to infection of Meloidogyne enterolobii </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.3390/horticulturae3040049">Accessible Morphological and Genetic Markers for Identification of Taioba and Taro, Two Forgotten Human Foods </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/gmr16039800">In silico modeling and characterization of phytoparasitic nematodes translationally-controlled tumor proteins </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.1007/s40415-016-0255-1">Genetic analysis across life stages of Metrodorea nigra (Rutaceae) in a population located in an urban landscape of Southeastern Brazil using a new set of microsatellite markers </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/gmr.15028003">Genetic diversity and morphological characterization of half-sib families of Heliconia bihai L., H. chartacea Lane ex Barreiros, and H. wagneriana Peterson </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/gmr.15038402">In silico comparative analysis of tylenchid nematode pectate lyases </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/gmr15048868">Response of Malpighia emarginata active germplasm bank accessions to Meloidogyne enterolobii parasitism </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/2015.April.15.15">Fragmentation effects and genetic diversity of the key semidecidual forest species Metrodorea nigra in Southwestern Brazil </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/2015.December.21.48">Genetic diversity of the Neotropical tree Hancornia speciosa Gomes in natural populations in Northeastern Brazil </a></li>
+            
+            <li><a class="nav-link" href="http://dx.doi.org/10.4238/2013.October.29.8">Genetic variability in accessions of the acerola germplasm bank of Universidade Federal Rural de Pernambuco, Brazil </a></li>
+            
+            <li><a class="nav-link" href="https://citrusrt.ccsm.br/article/5964e5d80e88254833082b39/pdf/citrusrt-32-2-67.pdf">Variabilidade genética em genótipos da coleção de germoplasma de Citrus, do Instituto Agronômico de Pernambuco Brejão-PE, por meio de marcadores moleculares ISSR </a></li>
+            
+        </ol>
+
+
+        <footer class="footer fixed-bottom">
+            <div class="name-bottom">
+                <h8 class="section-heading"> Contato: romulommfilho@yahoo.com.br</h8>
+                <div class="mx-auto heading-line"></div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

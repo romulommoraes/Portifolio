@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Populacional :)</title>
+    <meta name="Simulador Populacional para ensino de genética mendeliana" content="">
+    <meta name="Rômulo Maciel de Moraes Filho" content="">
+    <script src="p5.min.js"></script>
+    <!-- Mobile Specific Metas
+
+    <!--External Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Internal Styles -->
+    <style>
+        @media (max-width: 62em) {
+            .navbar-nav {
+                padding-top: .425rem;
+                padding-left: 0.75rem;
+            }
+
+            .navbar-nav .nav-item {
+                float: none;
+            }
+
+            .navbar-brand {
+                float: right;
+            }
+
+            .navbar-brand,
+            .navbar-nav .nav-item {
+                display: block;
+            }
+
+            .navbar-nav .nav-item+.nav-item {
+                margin-left: 0;
+            }
+
+            .dropdown-menu {
+                position: relative;
+                float: none;
+            }
+        }
+
+        .footer {
+            background-color: rgb(0, 0, 0);
+            color: #fafaff;
+            text-align: left;
+
+        }
+        
+        #profile_picture{
+        border:2px solid rgb(0, 0, 0);
+        width:95%;
+        margin-top: 90px;
+        margin-left: 0px;
+        }
+        #textz{
+        margin-top: 56px;
+        text-align: center;
+        margin-bottom: 56px;
+        }
+        .myself{
+        margin-top: 25px;
+        font-size: 13px;
+        text-align: justify;
+            
+        }
+        
+        #msg{
+        margin-top: 25px;
+        font-size: 9px;
+        margin-bottom: 25px;
+        text-align: left;
+                
+        }
+        
+        #entrada{
+        margin-top: 55px;
+        font-size: 15px;
+        }
+
+        .containerRomulo {
+                width: 96%;
+                margin-left: 2%;
+
+
+             }
+
+             .btn-block {
+                width: 85%;
+
+
+
+             }
+             .form-control {
+                width: 85%;
+
+
+
+             }
+
+            
+        
+    </style>
+    <!-- External Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+    <!-- Internal Scripts -->
+    <script type="text/javascript" src="">
+    </script>
+
+    
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <!-- <li class="nav-item active">
+                     <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.researchgate.net/profile/Romulo_Moraes_Filho">Research Gate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/r%C3%B4mulo-moraes-666617132">Linkedin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://lattes.cnpq.br/3450847631355213">Currículo Lattes</a>
+                </li>
+                <!-- Dropdown - Delete from this comment to the next if you don't want it -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produções</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://romulomoraesads.000webhostapp.com/naturalsimulations/Simulador_Populacional.html">Simulações Naturais</a>
+                        <a class="dropdown-item" href="#">Artigos Científicos</a>
+                        <a class="dropdown-item" href="http://dgp.cnpq.br/dgp/espelhorh/3450847631355213">Grupos de Pesquisa</a>
+                        <a class="dropdown-item" href="https://orcid.org/0000-0003-3988-4379">ORCID</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://github.com/romulommoraes">Github</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <main role="main" class="containerRomulo">
+    <div class="row">
+      <div id="entrada" class="two columns">
+        <form>
+        <input class="form-control" size="25" id="numIndividuos1" placeholder="População inicial" type="text">     
+        <input class="form-control" size="25" id="MaxPop" placeholder="Limite populacional (500)" type="text">
+        <input class="form-control" size="25" id="freqP" placeholder="Frequência de p (0 a 1)" type="text">
+        <input class="form-control" size="25" id="selxAA" placeholder="Seleção contra AA(%)" type="text">
+        <input class="form-control" size="25" id="selxAa" placeholder="Seleção contra Aa(%)" type="text">
+        <input class="form-control" size="25" id="selxaa" placeholder="Seleção contra aa(%)" type="text">
+        </form>
+        <p></p>
+        <button id="Alterar" type="button" class="btn btn-outline-dark btn-block" >Entrar variáveis</button>
+        <button id="abort" type="button" class="btn btn-outline-dark btn-block" >Finalizar Simulação</button>
+        <button id="pause" type="button" class="btn btn-outline-dark btn-block" >Pausar Simulação</button>
+    </div>
+      <div id="canva" class="six columns" >
+        <h2 id="title" style="margin-left: 15%;"> SIMULADOR POPULACIONAL </h2>
+      </div>
+      
+      <div class="four columns" style="position: relative; height:650px; width: 600px">
+        <br>
+        <canvas id="grafico" style="height:300px; width: 600px"></canvas> 
+        <canvas id="graficow" style="height:300px; width: 600px"></canvas> <br>  
+       <script src="simulador(atualizado).js"> </script>
+    </div>
+    <div class="row">
+      <div id="msg" class="twelve columns"><p>"Aplicação desenvolvida em JavaScript com uso da bibliteca P5.js baseada em modelos de genética populacional para fins educativos. Rômulo Maciel de Moraes Filho. Biólogo, Doutor em Genética, Pós Doutorando em Agronomia, Graduando em Análise e Desenvolvimento de Sistemas."</p> </div>
+    </div>
+
+    </main><!-- /.container -->
+
+
+    <footer class="footer fixed-bottom">
+        <div class="name-bottom">
+            <h8 class="section-heading"> Contato: romulommfilho@yahoo.com.br</h8>
+            <div class="mx-auto heading-line"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+
