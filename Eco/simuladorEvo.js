@@ -608,7 +608,7 @@ function init() {
             var lgdEstrut;
             var lgdmut;
          
-           if (mutacaoTx === 0) {
+           if (mutacaoTx === 0 || mutacaoTx === false) {
                 lgdmut = "Desabilitada";
             } else if (mutacaoTx === 200) {
                 lgdmut = "1/100";
