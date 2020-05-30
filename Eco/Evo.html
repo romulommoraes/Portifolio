@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Ecossistema :)</title>
+    <meta name="Simulador Populacional para ensino de genética mendeliana" content="">
+    <meta name="Rômulo Maciel de Moraes Filho" content="">
+
+    <script src="p5.min.js"></script>
+    <!-- Mobile Specific Metas -->
+
+    <!--External Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Internal Styles -->
+    <style>
+        body {
+            background-color: rgb(242, 248, 230);
+        }
+  
+        @media (max-width: 62em) {
+            .navbar-nav {
+                padding-top: .425rem;
+                padding-left: 0.75rem;
+            }
+
+            .navbar-nav .nav-item {
+                float: none;
+            }
+
+            .navbar-brand {
+                float: right;
+            }
+
+            .navbar-brand,
+            .navbar-nav .nav-item {
+                display: block;
+            }
+
+            .navbar-nav .nav-item+.nav-item {
+                margin-left: 0;
+            }
+
+            .dropdown-menu {
+                position: relative;
+                float: none;
+            }
+        }
+
+
+
+        .footer {
+            background-color: rgb(0, 0, 0);
+            color: #fafaff;
+            text-align: left;
+
+        }
+        
+      
+        #msg{
+        margin-top: 25px;
+        font-size: 9px;
+        margin-bottom: 25px;
+        text-align: center;
+                
+        }
+        
+        #entrada{
+
+        font-size: 15px;
+        }
+
+        .containerRomulo {
+                width: 98%;
+                margin: 1%;
+   
+
+
+             }
+
+
+             .block {
+                border: 1px solid gray; 
+                border-radius: 3px; 
+                height: 602px; 
+                margin-top: 0.3%;
+
+             }
+             #divmae {
+                background-color: rgb(242, 248, 230);
+                margin: 0%;
+                width: 100%;
+
+             }
+             .btn-block {
+                margin: 3%;
+                text-align: center;
+                width: 94%;
+                font-size: 7.5pt;
+                padding: 4%;
+                height: 32px;
+
+             }
+             .form-control {
+                margin: 3%;
+                text-align: center;
+                width: 94%;
+                font-size: 7.5pt;
+                background-color: white;
+                padding: 4%;
+                height: 32px;
+                
+
+             }
+
+             .alert {
+                margin: 3%;
+                text-align: center;
+                width: 94%;
+                font-size: 8.5pt;
+                font-weight: bold;
+                padding: 4%;
+                height: 32px;
+                
+
+             }
+
+             .forms {
+                margin: 3%;
+                text-align: left;
+                width: 94%;
+                font-size: 7.5pt;
+                background-color: white;
+                padding: 4%;
+                height: 32px;
+             }
+
+            
+        
+    </style>
+    <!-- External Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+    <!-- Internal Scripts -->
+
+    
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <!-- <li class="nav-item active">
+                     <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.researchgate.net/profile/Romulo_Moraes_Filho">Research Gate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/r%C3%B4mulo-moraes-666617132">Linkedin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://lattes.cnpq.br/3450847631355213">Currículo Lattes</a>
+                </li>
+                <!-- Dropdown - Delete from this comment to the next if you don't want it -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produções</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://romulomoraesads.000webhostapp.com/naturalsimulations/Simulador_Populacional.html">Simulações Naturais</a>
+                        <a class="dropdown-item" href="#">Artigos Científicos</a>
+                        <a class="dropdown-item" href="http://dgp.cnpq.br/dgp/espelhorh/3450847631355213">Grupos de Pesquisa</a>
+                        <a class="dropdown-item" href="https://orcid.org/0000-0003-3988-4379">ORCID</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://github.com/romulommoraes">Github</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <main role="main" class="containerRomulo">
+        <h2 id="title" style="text-align: center;"> SIMULADOR ECOSSISTEMA </h2><br>
+    <div class="row" id="divmae"> 
+      <div id="entrada" class="one column block" style="width: 118px;">
+        <form>
+        <button type="button" class="btn btn-secondary btn-lg alert" disabled>Configurações</button>
+        <input class="form-control" id="long" placeholder="Nº de Gerações" type="text">
+        <input class="form-control" id="limitAm" placeholder="Limite Ambiental" type="text"> 
+        <input class="form-control" id="fitoPop" placeholder="Pop Fitoplancton" type="text"> 
+        <input class="form-control" id="zooPop" placeholder="Pop Zooplancton" type="text"> 
+        <form>
+            <select class="custom-select mr-sm-2 forms" id="range">
+              <option selected>Estrutura Pop.</option>
+              <option value="0">Randômica</option>
+              <option value="2">100% T1</option>
+              <option value="3">100% T2</option>
+              <option value="4">100% T3</option>
+              <option value="5">100% T4</option>
+
+            </select>
+          </form>
+            <form>
+              <select class="custom-select mr-sm-2 forms" id="mutacaoTx">
+                <option selected>Taxa Mutacional</option>
+                <option value="0">Sem Mutações</option>
+                <option value="200">1 / 100</option>
+                <option value="1000">1 / 500</option>
+                <option value="2000">1 / 1000</option>
+              </select>
+            </form>
+
+            <button id="Alterar" type="button" class="btn btn-primary btn-block" >Entrar variáveis</button>
+            <button id="abort" type="button" class="btn btn-success btn-block" >Finalizar Simulação</button>
+            <button id="pause" type="button" class="btn btn-warning btn-block" >Pausar Simulação</button>
+ 
+        <!--
+        <input class="form-control" id="idRep" placeholder="Idade Reprodutiva" type="text">
+        <input class="form-control" id="pontos" placeholder="Pontos" type="text">
+        -->
+        </form>
+        <!--  botão modal  -->
+        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
+            Documentação
+          </button>
+          <div class="modal-dialog modal-dialog-scrollable">
+    
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Documentação Simulador Evolutivo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    Todos deixaram <br>
+                    a mesa do bar,<br>
+                    e talvez eu precise morrer um pouco mais<br>
+                    antes de tentar me levantar.<br>
+                    Daqui onde estou,<br>
+                    chego a conclusão <br>
+                    de que nem todo alcool do mundo<br>
+                    seria suficiente,<br>
+                    para me anestesiar para o óbvio,<br>
+                    pra a sensação de que <br>
+                    inevitavelmente<br>
+                    sempre estarei sozinho,<br>
+                    e de que talvez este<br>
+                    seja o meu devido lugar.<br>
+                    É isso o que eu ganho<br>
+                    por tentar mexer com coisas tão profundas <br>
+                    e tão reais e abstratas,<br>
+                    num tempo em que as pessoas<br>
+                    preferem se ater ao superficial<br>
+                    e ao leve.<br>
+                    é isso que eu ganho<br>
+                    por tentar respirar<br>
+                    quando devia enfiar a minha cabeça<br>
+                    no copo<br>
+                    e simplesmente<br>
+                    me afogar.<br>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                 
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    
+      <div class="six columns block" style="width: 602px;" >
+        <canva id="canva" style="margin: 0.5px"></canva>
+      </div>
+      
+      <div class="five columns block" style="width: 602px;">
+        
+        <canvas id="grafico"> </canvas> 
+        <canvas id="graficow"></canvas>   
+       
+    </div>
+    <div class="row">
+      <div id="msg" class="twelve columns" ><p> "Aplicação desenvolvida em JavaScript com uso da bibliteca P5.js baseada em modelos de genética populacional para fins educativos. Rômulo Maciel de Moraes Filho. Biólogo, Doutor em Genética, Pós Doutorando em Agronomia, Graduando em Análise e Desenvolvimento de Sistemas."</p> </div>
+    </div>
+
+    </main><!-- /.container -->
+    <script src="simuladorEvo.js"> </script>
+
+    <footer class="footer navbar-dark bg-dark">
+        <div class="name-bottom">
+            <h8 class="section-heading"> Contato: romulommfilho@yahoo.com.br</h8>
+            <div class="mx-auto heading-line"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+
